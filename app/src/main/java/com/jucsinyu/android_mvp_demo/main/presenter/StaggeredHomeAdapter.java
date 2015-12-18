@@ -82,7 +82,7 @@ public class StaggeredHomeAdapter extends
 
         mHeights = new ArrayList<Integer>();
         for (int i = 0; i < mDatas.size(); i++) {
-            mHeights.add((int) (100 + Math.random() * 300));
+            mHeights.add((int) (210 + Math.random() * 300));
         }
     }
 
@@ -100,6 +100,7 @@ public class StaggeredHomeAdapter extends
         LayoutParams lp1 = holder.pic_1.getLayoutParams();
         lp1.height = mHeights.get(position);
 //		holder.tv.setLayoutParams(lp);
+
         holder.pic_1.setLayoutParams(lp1);
 //        holder.tv.setText(mDatas.get(position));
 

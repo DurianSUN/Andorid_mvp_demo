@@ -107,7 +107,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder>
         public MyViewHolder(View view)
         {
             super(view);
-            tv = (TextView) view.findViewById(R.id.id_num);
+//            tv = (TextView) view.findViewById(R.id.id_num);
         }
     }
 }

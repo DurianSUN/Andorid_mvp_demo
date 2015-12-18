@@ -13,13 +13,14 @@
         android:layout_gravity="center"
         android:layout_margin="19dp"
         android:text="show phone number list"
-        android:textSize="13sp" />
+        android:textSize="15sp" />
+
+
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
         <Button
             android:id="@+id/id_add"
             android:layout_width="wrap_content"
@@ -33,12 +34,6 @@
             android:layout_height="wrap_content"
             android:onClick="Onclick"
             android:text="del" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
         <Button
             android:id="@+id/id_action_gridview"
@@ -53,12 +48,6 @@
             android:layout_height="wrap_content"
             android:onClick="Onclick"
             android:text="list" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
         <Button
             android:id="@+id/id_action_horizontalGridView"
@@ -74,14 +63,17 @@
             android:layout_height="wrap_content"
             android:onClick="Onclick"
             android:text="ver" />
-
     </LinearLayout>
+
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/id_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="#9094cc"
+        android:layout_margin="10dp"
+        android:padding="6dp"
         android:dividerHeight="10dp" />
 
 

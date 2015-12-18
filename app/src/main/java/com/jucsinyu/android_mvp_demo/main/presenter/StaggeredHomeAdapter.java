@@ -1,7 +1,4 @@
-package com.jucsinyu.android_mvp_demo.main.view;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.jucsinyu.android_mvp_demo.main.presenter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -15,15 +12,22 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 
 import com.jucsinyu.android_mvp_demo.R;
+import com.jucsinyu.android_mvp_demo.main.model.DataModel;
+import com.jucsinyu.android_mvp_demo.main.model.DataModelImpl;
 
-class StaggeredHomeAdapter extends
-		RecyclerView.Adapter<StaggeredHomeAdapter.MyViewHolder>
+import java.util.ArrayList;
+import java.util.List;
+
+public class StaggeredHomeAdapter extends
+		RecyclerView.Adapter<StaggeredHomeAdapter.MyViewHolder >implements SetPDataPersenter,OnShowChangeListener
 {
 
 	private List<String> mDatas;
 	private LayoutInflater mInflater;
 
 	private List<Integer> mHeights;
+
+	private DataModel picModel;
 
 	public interface OnItemClickLitener
 	{
@@ -41,6 +45,7 @@ class StaggeredHomeAdapter extends
 
 	public StaggeredHomeAdapter(Context context, List<String> datas)
 	{
+		picModel = new DataModelImpl();
 		mInflater = LayoutInflater.from(context);
 		mDatas = datas;
 
@@ -101,28 +106,44 @@ class StaggeredHomeAdapter extends
 		return mDatas.size();
 	}
 
-	public void addData(int position)
-	{
-		mDatas.add(position, "Insert One");
-		mHeights.add( (int) (100 + Math.random() * 300));
+
+
+	@Override
+	public void addData(int position) {
+		mDatas.add(position, "Insert 1");
+		mHeights.add((int) (100 + Math.random() * 200));
 		notifyItemInserted(position);
+
 	}
 
-	public void removeData(int position)
-	{
+	@Override
+	public void removeData(int position) {
 		mDatas.remove(position);
 		notifyItemRemoved(position);
+
+	}
+
+	@Override
+	public void SetData() {
+		mDatas = picModel.setDateText(this);
+	}
+
+	@Override
+	public void background(TextView view) {
+		view.setBackgroundResource(R.mipmap.ic_launcher);
 	}
 
 	class MyViewHolder extends ViewHolder
 	{
-
+		public TextView getTv() {
+			return tv;
+		}
 		TextView tv;
-
 		public MyViewHolder(View view)
 		{
 			super(view);
 			tv = (TextView) view.findViewById(R.id.id_num);
+			background(tv);
 
 		}
 	}

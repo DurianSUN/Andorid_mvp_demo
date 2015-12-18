@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.jucsinyu.android_mvp_demo.R;
+import com.jucsinyu.android_mvp_demo.main.presenter.StaggeredHomeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,6 @@
 package com.jucsinyu.android_mvp_demo.main.presenter;
 
+import android.view.View;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -9,6 +10,6 @@ import org.w3c.dom.Text;
  */
 public interface SetPDataPersenter {
 
-    public void SetData();
-    public void background(TextView view);
+    public void setData();
+    public void setBackground();
 }

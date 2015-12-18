@@ -10,6 +10,7 @@ import java.util.List;
  * Created by jucsinsun on 2015/12/18.
  */
 public interface DataModel {
-    public void setBackground(TextView v);
+//    public void setPictureBg(OnShowChangeListener changeListener);
     public  List<String>  setDateText (OnShowChangeListener changeListener);
+    public List<String> setDateUrlPic();
 }
